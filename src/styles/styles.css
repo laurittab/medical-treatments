@@ -1,0 +1,91 @@
+/* styling layout, e.g. centring grid containers within tabs */
+.containter_centred {
+  text-align: center;
+  display: flex;
+}
+/* styling fields, e.g. TextFieldUI components */
+div > div.panel_boxes > * {
+  width: 50%;
+  height: 60px;
+  background-color: white;
+}
+/* styling layout, e.g. placing buttons side by side in a row */
+div.button_row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+/* styling text, e.g. courses and/or treatment lists and instructions to the user */
+div.ul-lists,
+p.instructions {
+  font-size: 0.85em;
+  text-align: justify;
+}
+/* styling margin, e.g. creating space between components in view */
+div.mrgn-tp-100 {
+  margin-top: 100px;
+}
+/* styling font, e.g. errror message */
+h1 {
+  font-weight: bold;
+  color: red;
+}
+/* styling element, e.g. titles for each component in view */
+h4 {
+  height: 50px;
+  margin-top: 25px;
+  margin-bottom: 50px;
+  border-radius: 10px;
+}
+/* styling font weight, e.g. for Admin and Practitioner titles in each tab */
+h5 {
+  font-weight: bold;
+}
+/* styling font color, e.g. for the Admin title in Clients tab */
+h5.admin {
+  color: purple;
+}
+/* styling for select elements, e.g. in 'EditTreatments' component */
+select {
+  padding-left: 10px;
+  font-size: 0.75em;
+  font-style: italic;
+  width: 50%;
+  color: rgb(230, 0, 115);
+  font-weight: bold;
+}
+/* styling for list elements, e.g. in 'Edit' components */
+li {
+  font-size: 0.6em;
+  text-align: left;
+}
+/* styling font color for strong elements, e.g. in Treatment and Course components */
+strong {
+  color: rgb(89, 89, 89);
+}
+/* removing 'Display all treatments' from view, e.g. CategoryFilters component */
+.remove_category {
+  display: none;
+}
+/* setting width, e.g. for 'VeiwChanges' button */
+.wdth-44 {
+  width: 44%;
+}
+/* styling background colour, e.g. 'View' titles */
+.dark-bg {
+  background-color: rgb(127, 206, 239);
+}
+/* styling background colour, e.g. 'View' titles */
+.light-bg {
+  background-color: rgb(191, 231, 247);
+}
+/* styling position, e.g. 'Exit' button */
+.flt_rt {
+  float: right;
+}
+/* styling font, e.g. for displaying the 'Prescriptions and repeat Prescriptions' category */
+.blue-itlc {
+  color: rgb(0, 46, 196);
+  font-style: italic;
+}
+

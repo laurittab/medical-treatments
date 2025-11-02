@@ -7,6 +7,8 @@ import { v4 as uuidv4 } from "uuid";
 import Course from "../displays/Course.jsx";
 import Treatment from "../displays/Treatment.jsx";
 
+const REACT_APP_CLIENT_SERVER_URL = process.env.REACT_APP_CLIENT_SERVER_URL;
+
 /**
  *Converts JSON object to a JavaScript object
  *@param {object} a JSONdata  object
@@ -64,7 +66,7 @@ export const listResponses = (list) =>
  */
 export const saveRecord = (value, type, setUpdate) =>
   axios
-    .post(`https://1-a-node-app-for-medical-records.glitch.me/${type}`, value)
+    .post(`${REACT_APP_CLIENT_SERVER_URL}/${type}`, value)
     .then((response) => {
       var resData = response;
       return setUpdate(resData.data);
@@ -81,7 +83,7 @@ export const saveRecord = (value, type, setUpdate) =>
 export const updateRecord = (value, type, id, setUpdate) =>
   axios
     .put(
-      `https://1-a-node-app-for-medical-records.glitch.me/update${type}/${id}`,
+      `${REACT_APP_CLIENT_SERVER_URL}/update${type}/${id}`,
       value
     )
     .then((response) => {
@@ -99,7 +101,7 @@ export const updateRecord = (value, type, id, setUpdate) =>
 export const deleteRecord = (type, id, setUpdate) =>
   axios
     .delete(
-      `https://1-a-node-app-for-medical-records.glitch.me/delete${type}/${id}`
+      `${REACT_APP_CLIENT_SERVER_URL}/delete${type}/${id}`
     )
     .then((response) => {
       var resData = response.data;

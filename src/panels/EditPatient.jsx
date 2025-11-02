@@ -27,6 +27,8 @@ import SelectButton from "../buttons/SelectButton.jsx";
 import UpdateButton from "../buttons/UpdateButton.jsx";
 import ViewChanges from "../buttons/ViewChanges.jsx";
 
+const REACT_APP_CLIENT_SERVER_URL = process.env.REACT_APP_CLIENT_SERVER_URL;
+
 //constant declared as a component passed as a reference to the main function's child to create an alert warning
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlertUI elevation={6} ref={ref} variant="filled" {...props} />;
@@ -126,7 +128,7 @@ function EditPatient() {
   function getData() {
     axios
       .get(
-        `https://1-a-node-app-for-medical-records.glitch.me/records/${clientID}`
+        `${REACT_APP_CLIENT_SERVER_URL}/records/${clientID}`
       )
       .then((response) => {
         var resData = response.data;

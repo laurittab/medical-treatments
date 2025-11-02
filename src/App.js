@@ -28,6 +28,8 @@ import ViewPatient from "./displays/ViewPatient.jsx";
 import TryAgain from "./buttons/TryAgain.jsx";
 import useAPI from "./utilities/useAPI.jsx";
 
+const REACT_APP_CLIENT_SERVER_URL = process.env.REACT_APP_CLIENT_SERVER_URL;
+
 //constant declared as the initial state for the useReducer Hook and assigned an object containing an empty array as its value
 const detailsInitialState = {
   details: [],
@@ -86,13 +88,13 @@ export default function App() {
 
   //constants declared and assigned the values returned from useAPI Hook
   const patientEndpoint = useAPI(
-    `https://1-a-node-app-for-medical-records.glitch.me/records/${client.details}`
+    `${REACT_APP_CLIENT_SERVER_URL}/records/${client.details}`
   );
   const treatmentEndpoint = useAPI(
-    "https://1-a-node-app-for-medical-records.glitch.me/patient/treatment/records"
+    `${REACT_APP_CLIENT_SERVER_URL}/patient/treatment/records`
   );
   const courseEndpoint = useAPI(
-    "https://1-a-node-app-for-medical-records.glitch.me/treatmentCourses"
+    `${REACT_APP_CLIENT_SERVER_URL}/treatmentCourses`
   );
 
   return (

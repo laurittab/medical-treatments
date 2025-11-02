@@ -25,6 +25,8 @@ import ViewChanges from "../buttons/ViewChanges.jsx";
 import SaveButton from "../buttons/SaveButton.jsx";
 import SelectButton from "../buttons/SelectButton.jsx";
 
+const REACT_APP_CLIENT_SERVER_URL = process.env.REACT_APP_CLIENT_SERVER_URL;
+
 //Main function for the component which returns a treatments panel
 function EditTreatments() {
   //constants declared as variable & function pairs for the useState hook, initialised to an empty values and false
@@ -90,7 +92,7 @@ function EditTreatments() {
   function getData() {
     axios
       .get(
-        `https://1-a-node-app-for-medical-records.glitch.me/treatments/${treatID}`
+        `${REACT_APP_CLIENT_SERVER_URL}/treatments/${treatID}`
       )
       .then((response) => {
         var resData = response.data;

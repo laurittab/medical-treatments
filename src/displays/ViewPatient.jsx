@@ -15,6 +15,8 @@ import ClearButton from "../buttons/ClearButton.jsx";
 import DisplayTreatments from "./DisplayTreatments.jsx";
 import useAPI from "../utilities/useAPI.jsx";
 
+const REACT_APP_CLIENT_SERVER_URL = process.env.REACT_APP_CLIENT_SERVER_URL;
+
 //Main function for the component which returns a table of details for a client and calls another componment
 function ViewPatient(props) {
   //Declared constant object whose properties will hold the values of the 'client' context
@@ -40,7 +42,7 @@ function ViewPatient(props) {
 
   //constant declared and assigned the value returned from useAPI Hook
   const treatmentRecords = useAPI(
-    `http://localhost:8080/patient/treatment/records/${client.details}`
+    `${REACT_APP_CLIENT_SERVER_URL}/patient/treatment/records/${client.details}`
   );
 
   //Calls a function to update client context to intial state

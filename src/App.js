@@ -36,7 +36,7 @@ const detailsInitialState = {
 };
 
 /**
- *Creates a new state for 'client' based on an action type
+ *Creates a new state for 'client' based on action type
  *@param {object} a list client details
  *@param {object} an action
  *@return {object} a new state containing the updated 'client.details'
